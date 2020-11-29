@@ -1,0 +1,475 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Form</title>
+    
+    <style type="text/css">
+     :root{
+    --font-color:#555;
+    --font-hover-color:orange;
+}
+
+
+.container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.form-group{
+    margin-bottom:1.5em;
+    transition:all .3s;
+}
+.form-label{
+    font-size:.75em;
+    color:var(--font-color);
+    display:block;
+    opacity:0;
+    transition: all .3s;
+    transform:translateX(-50px);
+}
+.form-control{
+    box-shadow:none;
+    border-radius:0;
+    border-color:#ccc;
+    border-style:none none solid none;
+    width:100%;
+    font-size:1.25em;
+    transition:all .6s;
+}
+.form-control::placeholder{
+    color:#aaa;
+}
+.form-control:focus{
+    box-shadow:none;
+    border-color:var(--font-hover-color);
+    outline:none;
+}
+.form-group:focus-within{
+    transform:scale(1.1,1.1);
+}
+
+.form-control:invalid:focus{
+    border-color:red;
+}
+.form-control:valid:focus{
+    border-color:green;
+}
+
+.btn{
+    background: 0 0 #fff;
+    border:1px solid #aaa;
+    border-radius:3px;
+    color:var(--font-color);
+    font-size:1em;
+    padding:10 50px;
+    text-transform:uppercase;
+}
+.btn:hover{
+    border-color:var(--font-hover-color);
+    color:var(--font-hover-color);
+}
+textarea{
+    resize:none;
+}
+
+
+
+.focused > .form-label{
+    opacity:1;
+    transform:translateX(0px);
+
+}
+
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+nav {
+    background: #222;
+    padding: 0 15px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.menu,
+.submenu {   
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+.item {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+.menu li.subitem a {
+    padding: 15px;
+}
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.active .item {
+    display: block;
+}
+.button.secondary { /* divider between buttons and menu links */
+    border-bottom: 1px #444 solid;
+}
+/* Submenu up from mobile screens */
+.submenu {
+    display: none;
+}
+.submenu-active .submenu {
+   display: block;
+}
+.has-submenu i {
+    font-size: 12px;
+}
+.has-submenu > a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900; 
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+.subitem a {
+    padding: 10px 15px;
+}
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: #0080ff;
+        border: 1px royalblue solid;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: transparent;
+        border: 1px #0080ff solid;  
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+    }
+}
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;     
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block; 
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+    .toggle {
+        display: none;
+    }
+    .submenu-active {
+        border-radius: 0;
+    }
+}
+
+.fa {
+  padding: 29spx;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: rgb(255, 255, 255);
+}  
+  .fa-whatsapp {
+  background: #55ee5d;
+  color: white
+}
+.fa-github {
+  background: #364753;
+  color: white
+}  
+
+</style>
+</style>
+
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webform.css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="main.js"></script>
+</head>
+
+    
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">welcome </a></li>
+            <li class="item"><a href="index6.html">Home</a></li>
+            <li class="item"><a href="index2.html">About</a></li>
+            <li class="item has-submenu">
+            <li class="item"><a href="index1.html">project</a></li> 
+                <ul class="submenu">             
+                </ul>
+            </li>
+            <li class="item has-submenu">
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li class="item"><a href="index3">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" style="margin-top:100px;">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-md-offset-3" align="center">
+                <input id="name" placeholder="Name" class="form-control"><br><br>
+                <input id="email" placeholder="Email" class="form-control"><br><br>
+                <input id="subject" placeholder="Subject" class="form-control">
+                <textarea class="form-control" id="body" placeholder="Your Email"></textarea>
+                <div class="g-recaptcha brochure__form__captcha" data-sitekey="6LdlTO4ZAAAAALXx9pqjYJXbKz9voOfT8PSJ6etI"></div><br><br>
+                <input type="button" onclick="sendEmail()" value="Send An Email" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+        </style>
+        </head>
+        </p>
+        <div class="section">
+            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +27 61 6564 713</p>
+          </div><br>
+          <p><i class="fa fa-fw fa-envelope"></i><a href="Thabangray.kutumane@gmail.com">thabangray.kutumane@gmail.com</a></p> 
+          </div><br>
+
+        <!-- Add font awesome icons -->
+        
+        <a href="https://www.facebook.com/Thabang.kutumane.91"class="fa fa-facebook"></a>
+        <a href="https://www.linkedin.com/in/thabang-kutumane-5022531b7" class="fa fa-linkedin"></a>
+        <a href="https://instagram.com/iam_the_melanin?igshid=1ggcdrzii5yjo" class="fa fa-instagram"></a>
+        <a href="https://wa.link/tvh4ph"><a" class="fa fa-whatsapp"></a>
+        <a href="https://github.com/" class="fa fa-github"></a>
+         <br>
+        </body>
+        </div>
+        </section>
+      </div><br>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function sendEmail() {
+            var name = $("#name");
+            var email = $("#email");
+            var subject = $("#subject");
+            var body = $("#body");
+
+            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
+                $.ajax({
+                   url: 'sendEmail.php',
+                   method: 'POST',
+                   dataType: 'json',
+                   data: {
+                       name: name.val(),
+                       email: email.val(),
+                       subject: subject.val(),
+                       body: body.val()
+                   }, success: function (response) {
+                        if (response.status == "success")
+                            alert('Email Has Been Sent!');
+                        else {
+                            alert('Please Try Again!');
+                            console.log(response);
+                        }
+                   }
+                });
+            }
+        }
+
+        function isNotEmpty(caller) {
+            if (caller.val() == "") {
+                caller.css('border', '1px solid red');
+                return false;
+            } else
+                caller.css('border', '');
+
+            return true;
+        }
+    </script>
+
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+</br>
+</body>
+<script>
+    const toggle = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
+     
+    /* Toggle mobile menu */
+    function toggleMenu() {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+             
+            // adds the menu (hamburger) icon
+            toggle.querySelector("a").innerHTML = "<i class=’fas fa-bars’></i>";
+        } else {
+            menu.classList.add("active");
+             
+            // adds the close (x) icon
+            toggle.querySelector("a").innerHTML = "<i class=’fas fa-times’></i>";
+        }
+    }
+     
+    /* Event Listener */
+    toggle.addEventListener("click", toggleMenu, false);
+    const items = document.querySelectorAll(".item");
+     
+    /* Activate Submenu */
+    function toggleItem() {
+      if (this.classList.contains("submenu-active")) {
+        this.classList.remove("submenu-active");
+      } else if (menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+        this.classList.add("submenu-active");
+      } else {
+        this.classList.add("submenu-active");
+      }
+    }
+     
+    /* Event Listeners */
+    for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+          item.addEventListener("keypress", toggleItem, false);
+        }   
+    }
+    
+    /* Close Submenu From Anywhere */
+    function closeSubmenu(e) {
+      let isClickInside = menu.contains(e.target);
+     
+      if (!isClickInside && menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+      }
+    }
+     
+    /* Event listener */
+    document.addEventListener("click", closeSubmenu, false);
+    
+    
+    </script>
+    <body>
+        
+    
+</html>

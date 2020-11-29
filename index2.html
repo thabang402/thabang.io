@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        body {
+         background:url(1img.jpg);
+         height:100vh;
+-webkit-background-size:cover;
+background-size:cover;
+background-position:center center;
+position: relative;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:LightGray;
+}
+
+li {
+    
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: turquoise;
+}
+
+.active {
+    background-color: steelblue;
+}
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+nav {
+    background: #222;
+    padding: 0 15px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.menu,
+.submenu {   
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+.item {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+.menu li.subitem a {
+    padding: 15px;
+}
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.active .item {
+    display: block;
+}
+.button.secondary { /* divider between buttons and menu links */
+    border-bottom: 1px #444 solid;
+}
+/* Submenu up from mobile screens */
+.submenu {
+    display: none;
+}
+.submenu-active .submenu {
+   display: block;
+}
+.has-submenu i {
+    font-size: 12px;
+}
+.has-submenu > a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900; 
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+.subitem a {
+    padding: 10px 15px;
+}
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: #0080ff;
+        border: 1px royalblue solid;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: transparent;
+        border: 1px #0080ff solid;  
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+    }
+}
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;     
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block; 
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+    .toggle {
+        display: none;
+    }
+    .submenu-active {
+        border-radius: 0;
+    }
+}
+
+</style>
+   </head>
+
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">welcome </a></li>
+            <li class="item"><a href="index6.html">Home</a></li>
+            <li class="item"><a href="index2.html">About</a></li>
+            <li class="item has-submenu">
+            <li class="item"><a href="index1.html">project</a></li> 
+                <ul class="submenu">             
+                </ul>
+            </li>
+            <li class="item has-submenu">
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li class="item"><a href="index3">Contact</a>
+            </li>
+        </ul>
+    </nav>
+<h2 style="color:#e5ff00">
+<font color="#black">
+    <u>
+ABOUT</u></h2>
+<ul>
+    <img src="damn.jpg.jpg" width="200" height="200">
+
+ <p><br>My name is Thabang kutumane raised in cape town.I am 24 years of age and I m a very hard worker <br>and I m always eager to learn knew things,so there for I always give back what I learned.<br>I am a very open minded person I love to explorer seating things outs of my comfort zone.I am a people person.i'm a very passionated type of person.</p>
+</p>
+<img src="my.jpg" width="200" height="200">
+ 	<br>
+ I always wanted to learn the basics of Web Dev including HTML Fundamentals & CSS Fundamentals.when i saw the post saying need 10<br> 
+ candidate to enter the learnership i was excited even rushed to the tack shop <br> buy data just to send my documents fast just to be the first candidate didnt want to miss this opportunity because always <br>wanted to do coding, i can say was my passion since in high school because had ideas that needed the <br>type of skills that i can say i'm broudly doing it now and i really enjoy doing it even sometimes its tricky.
+</p>
+</ul>
+</h1>
+
+<h2><u>Skills and Abilities</u></h2>
+<l> 
+  <br>
+  <h4><li>HTML Fundamentals</li></h4>
+  <img src="download.png"  width="150" height="150">
+  <br>
+  <h4><li>CSS Fundamentals</li></h4>
+  <img src="download (2).png" width="150" height="150">
+  <br>
+  <h4><li>JavaScript Fundamentals</li></h4>
+  <img src="download (1).png" width="150" height="150">
+  <br>
+  <br>  
+</ul>
+<br>
+<br>
+<h2><u>Hobbies and Interests</u></h2>
+<l> 
+  <h4><li>basketball</li></h4>
+  <br>
+   <h4><li>Music</li></h4>
+  <br>
+  <h4><li>dancing</li></h4>
+  <br>
+  <h4><li>writting ideas</li></h4>  
+</ul>
+<br>
+
+</body>
+</html>
+<p> &copy;2020-thabang kutumane-All rights reseved
+</p> 
+<script>
+    const toggle = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
+     
+    /* Toggle mobile menu */
+    function toggleMenu() {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+             
+            // adds the menu (hamburger) icon
+            toggle.querySelector("a").innerHTML = "<i class=’fas fa-bars’></i>";
+        } else {
+            menu.classList.add("active");
+             
+            // adds the close (x) icon
+            toggle.querySelector("a").innerHTML = "<i class=’fas fa-times’></i>";
+        }
+    }
+     
+    /* Event Listener */
+    toggle.addEventListener("click", toggleMenu, false);
+    const items = document.querySelectorAll(".item");
+     
+    /* Activate Submenu */
+    function toggleItem() {
+      if (this.classList.contains("submenu-active")) {
+        this.classList.remove("submenu-active");
+      } else if (menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+        this.classList.add("submenu-active");
+      } else {
+        this.classList.add("submenu-active");
+      }
+    }
+     
+    /* Event Listeners */
+    for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+          item.addEventListener("keypress", toggleItem, false);
+        }   
+    }
+    
+    /* Close Submenu From Anywhere */
+    function closeSubmenu(e) {
+      let isClickInside = menu.contains(e.target);
+     
+      if (!isClickInside && menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+      }
+    }
+     
+    /* Event listener */
+    document.addEventListener("click", closeSubmenu, false);
+    
+    
+    </script>
+</body>
+</html>
