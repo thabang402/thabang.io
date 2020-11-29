@@ -1,0 +1,69 @@
+
+:root{
+    --font-color:green;
+    --font-hover-color:blue;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+    font-family: "Releyway", sans-serif;
+}
+.container{
+     width:500px;
+     background-color:#ddd;
+}
+
+.form-group{
+    margin-bottom:1.5cm;
+}
+.form-label{
+    font-size:.75cm;
+    color:var(--font-color);
+    display:block;
+    opacity:1;
+}
+.form-control{
+    box-shadow:none;
+    border-radius: 0;
+    border-color:#ccc;
+    border-style:none none solid none;
+    width:100;
+    font: size 1.25cm;
+    transition:all .6s
+}
+.form-control::placeholder{
+    color: #aaa;
+}
+.form-control:focus{
+    box-shadow:none;
+    border-color:var(--font-hover-color);
+    outline:none;
+}
+.form-group:focus-width{
+    transform:scale(1,1,1,);
+}
+
+.form-control:invalid:focus{
+    border-color:green;
+}
+.form-control:invalid{
+    border-color:red;
+}
+.btn{
+    background: 0 0 #fff;
+    border:1px solid #aaa;
+    border-radius: 3px;
+    color:var(--font-color);
+    font-size:1cm;
+    padding:10 50px;
+    text-transform:uppercase;
+}
+.btn:hover{
+    border-color:var(--font-hover-color);
+    color:var(--font-hover-color);
+}
+.textarea{
+     resize:none;
+}
